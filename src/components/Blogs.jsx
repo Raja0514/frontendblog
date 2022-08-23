@@ -9,7 +9,7 @@ const Blogs = () => {
 
   const sendRequest = async () => {
     const res = await axios
-      .get("http://localhost:5000/api/blogs")
+      .get("https://lastcheck0.herokuapp.com/api/blogs")
       .catch((err) => console.log(err));
 
     const data = await res.data;

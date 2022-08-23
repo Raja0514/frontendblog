@@ -14,8 +14,8 @@ const Addblog = () => {
   });
 
   const sendRequest=async()=>{
-
-    const res=await axios.post("http://localhost:5000/api/blogs/add",{
+    
+    const res=await axios.post("https://lastcheck0.herokuapp.com/api/blogs/add",{
 
     title:inputs.Title,
     description:inputs.Description,

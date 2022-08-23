@@ -27,7 +27,7 @@ const navigate=useNavigate();
 
   const fetchDetail = async () => {
     const res = await axios
-      .get(`http://localhost:5000/api/blogs/${id}`)
+      .get(`https://lastcheck0.herokuapp.com/api/blogs/${id}`)
       .catch((err) => console.log(err));
 
     const data = res.data;
@@ -49,7 +49,7 @@ const navigate=useNavigate();
 
   const sendRequest=async()=>{
 
-    const res=await axios.put(`http://localhost:5000/api/blogs/update/${id}`,{
+    const res=await axios.put(`https://lastcheck0.herokuapp.com/api/blogs/update/${id}`,{
 
      title:inputs.Title,
      description:inputs.Description
