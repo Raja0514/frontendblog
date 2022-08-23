@@ -44,7 +44,7 @@ const navigate=useNavigate();
     
     
   });
-  }, [id]);
+  });
 
 
   const sendRequest=async()=>{
