@@ -25,17 +25,17 @@ const navigate=useNavigate();
 
   console.log(id);
 
-  const fetchDetail = async () => {
-    const res = await axios
+  const fetchDetail = (() => {
+    const res =  axios
       .get(`https://lastcheck0.herokuapp.com/api/blogs/${id}`)
       .catch((err) => console.log(err));
 
-    const data =  await res.data;
+    const data =   res.data;
 
     console.log(data);
 
     return data;
-  };
+  });
 
   useEffect(() => {
     fetchDetail().then((data) => {
@@ -44,23 +44,23 @@ const navigate=useNavigate();
     
     
   });
-  },[]);
+  });
 
 
-  const sendRequest=async()=>{
+  const sendRequest=(()=>{
 
-    const res=await axios.put(`https://lastcheck0.herokuapp.com/api/blogs/update/${id}`,{
+    const res=axios.put(`https://lastcheck0.herokuapp.com/api/blogs/update/${id}`,{
 
      title:inputs.Title,
      description:inputs.Description
 
     }).catch(err=>console.log(err))
     
-    const data= await res.data;
+    const data=res.data;
 
     return data
 
-  }
+  },[])
 
 
   console.log(blog);
