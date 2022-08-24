@@ -44,23 +44,23 @@ const navigate=useNavigate();
     
     
   });
-  });
+  },[]);
 
 
-  const sendRequest=(()=>{
+  const sendRequest=async()=>{
 
-    const res=axios.put(`https://lastcheck0.herokuapp.com/api/blogs/update/${id}`,{
+    const res= await axios.put(`https://lastcheck0.herokuapp.com/api/blogs/update/${id}`,{
 
      title:inputs.Title,
      description:inputs.Description
 
     }).catch(err=>console.log(err))
     
-    const data=res.data;
+    const data= await res.data;
 
     return data
 
-  },[])
+  }
 
 
   console.log(blog);
@@ -140,5 +140,4 @@ const handleSubmit=(e)=>{
     </>
   );
 };
-
 export default Blogdetail;

@@ -7,7 +7,8 @@ const Userblog = () => {
   const[user,setUser]=useState();
 
   const id=localStorage.getItem('userId')
-  const sendRequest=async()=>{
+  
+  const sendRequest = async()=>{
 
     const res=await axios.get(`https://lastcheck0.herokuapp.com/api/blogs/user/${id}`).catch(err=>console.log(err))
     
@@ -20,7 +21,7 @@ const Userblog = () => {
 
     sendRequest().then((data)=>setUser(data.user))
 
-  })
+  },[])
 
   console.log(user)
   return (
