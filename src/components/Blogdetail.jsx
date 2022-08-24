@@ -25,17 +25,17 @@ const navigate=useNavigate();
 
   console.log(id);
 
-  const fetchDetail = (() => {
-    const res =  axios
+  const fetchDetail = async() => {
+    const res =  await axios
       .get(`https://lastcheck0.herokuapp.com/api/blogs/${id}`)
       .catch((err) => console.log(err));
 
-    const data =   res.data;
+    const data =  await res.data;
 
     console.log(data);
 
     return data;
-  });
+  };
 
   useEffect(() => {
     fetchDetail().then((data) => {
