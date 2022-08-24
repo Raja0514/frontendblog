@@ -30,7 +30,7 @@ const navigate=useNavigate();
       .get(`https://lastcheck0.herokuapp.com/api/blogs/${id}`)
       .catch((err) => console.log(err));
 
-    const data = res.data;
+    const data =  await res.data;
 
     console.log(data);
 
@@ -44,7 +44,7 @@ const navigate=useNavigate();
     
     
   });
-  },[id]);
+  },[]);
 
 
   const sendRequest=async()=>{
