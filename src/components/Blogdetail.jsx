@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState,useRef } from "react";
 import {useNavigate,useParams} from "react-router-dom";
 import axios from "axios";
 import { Typography, Box, InputLabel, TextField, Button } from "@mui/material";
@@ -7,6 +7,8 @@ import { Typography, Box, InputLabel, TextField, Button } from "@mui/material";
 const Blogdetail = () => {
 
 const navigate=useNavigate();
+
+const temp=useRef();
   
   const [inputs, setInputs] = useState({
     
@@ -34,6 +36,8 @@ const navigate=useNavigate();
 
     console.log(data);
 
+    
+
     return data;
   };
 
@@ -42,9 +46,10 @@ const navigate=useNavigate();
       setBlog(data.findid)
       setInputs({Title:data.findid.title,Description:data.findid.description})
     
+      temp.current=fetchDetail();
     
   });
-  },[]);
+  },[temp]);
 
 
   const sendRequest=async()=>{
