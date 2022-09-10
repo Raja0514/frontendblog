@@ -27,7 +27,7 @@ const temp=useRef();
 
   console.log(id);
 
-  const fetchDetail = async() => {
+  const fetchDetail = async(id) => {
     const res =  await axios
       .get(`https://lastcheck0.herokuapp.com/api/blogs/${id}`)
       .catch((err) => console.log(err));
@@ -49,7 +49,7 @@ const temp=useRef();
       temp.current=fetchDetail();
     
   });
-  },[]);
+  },[id]);
 
 
   const sendRequest=async()=>{
