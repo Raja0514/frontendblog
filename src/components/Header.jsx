@@ -20,7 +20,8 @@ const Header = () => {
 
     position="sticky"
       sx={{
-        background: "green",
+        
+              background: " linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(5,4,72,60) 15%, rgba(9,9,121,1) 35%, rgba(0,2,0,10) 90%);"
       }}
     >
       <Toolbar>
