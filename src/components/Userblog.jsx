@@ -21,7 +21,7 @@ const Userblog = () => {
 
     sendRequest().then((data)=>setUser(data.user))
 
-  },[])
+  })
 
   console.log(user)
   return (

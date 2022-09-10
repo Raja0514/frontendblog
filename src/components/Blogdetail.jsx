@@ -49,7 +49,7 @@ const temp=useRef();
       temp.current=fetchDetail();
     
   });
-  },[temp]);
+  });
 
 
   const sendRequest=async()=>{
